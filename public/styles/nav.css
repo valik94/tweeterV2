@@ -1,0 +1,40 @@
+nav{
+    height: 120px;
+    width: 100vw;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+span{
+    font: 'Bungee';
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+#title{
+    font-family: Bungee;
+    margin-left: 1.5em;
+}
+
+.icontext{
+margin-right: 1.5em;
+margin-bottom: 0;
+display:flex;
+align-items: center;
+flex-direction: column;
+}
+
+.fa-angle-double-down{
+color: red;
+}
+
+.icontext p{
+    margin-bottom: 0;
+}
+
