@@ -87,19 +87,19 @@ $(document).ready(function () {
     console.log('tweetData is', typeof tweetData, tweetData.length);
     $('.error-message').hide().removeClass('error-class');
     if (diff < 0) {//form validation for tweet chars exceeding 140
-        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> Too long, please respect limit of 140 chars. #kthxbye <i class="fas fa-exclamation-triangle"></i>`);
+        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> Too long, please respect limit of 140 chars. #kthxbye <i class="fas fa-exclamation-triangle"></i>`);//html error message styling to display
         $('.error-message').slideDown().addClass('error-class');
       return;
     }
     if (tweetData.length === 0 || tweetData === null) { //form validation for empty tweet
-        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> The tweet, is empty, please write something. #kthxbye <i class="fas fa-exclamation-triangle"></i>`)
+        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> The tweet, is empty, please write something. #kthxbye <i class="fas fa-exclamation-triangle"></i>`) //html error message styling to display
         $('.error-message').slideDown().addClass('error-class');
       return;
     }
     console.log($('.error-message').hasClass('error-class'));
 
-    if ($('.error-message').hasClass('error-class')){
-        $('.error-message').slideUp().removeClass('error-class');
+    if ($('.error-message').hasClass('error-class')){ //form to revert state if error-class class is still showing.
+        $('.error-message').slideUp().removeClass('error-class'); //slideup/hide and removeclass error-class
         return;
     }
 
