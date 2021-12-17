@@ -24,7 +24,7 @@ $(document).ready(function () {
         </div>
         <div id='handleOfUser'>${tweetData.user.handle}</div>
     </div> 
-        <p class="tweet-text">${safeHTML}</p>
+        <p class="tweet-text">${safeHTML}</p> 
     </header>
     <footer>
       <span class="need_to_be_rendered">${timeago.format(
@@ -54,7 +54,7 @@ $(document).ready(function () {
       })
     }
   };
-
+//targeting tweet form to on submit event to perform the form validation
   $(".tweet-form").on(`submit`, function (event) {
     event.preventDefault();
     let diff = 140 - document.getElementById("tweet-text").value.length;
@@ -86,7 +86,7 @@ $(document).ready(function () {
     }
 
     const data = $(`.tweet-form textarea`).serialize(); //serialize data
-
+//POST request  post data to /tweets and then get data, render and display it
     $.ajax("/tweets", { method: "POST", data: data })
         .then(function (tweetResult) {
         let tweetTextArea = $('#tweet-text');
@@ -104,9 +104,10 @@ $(document).ready(function () {
     });
   });
 
-  //fetches tweets from /tweets
+  //fetches tweets from /tweets using get request
   const loadtweets = function () {
-    $.ajax("/tweets", { method: "GET" }).then(function (tweetDisplay) {
+    $.ajax("/tweets", { method: "GET" })
+      .then(function (tweetDisplay) { 
       renderTweets(tweetDisplay);
       console.log("Display:", tweetDisplay);
     });
