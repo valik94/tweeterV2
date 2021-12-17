@@ -49,10 +49,11 @@ $(document).ready(function () {
       // loops through tweets
       let $returnedValue = createTweetElement($tweet); // calls createTweetElement for each tweet
       result = $(`#tweet-record`).prepend($returnedValue); // takes return value and appends it to the tweets container
+      $('textarea').on('submit', function(event){
+
+      })
     }
   };
-
-  //renderTweets(data);
 
   $(".tweet-form").on(`submit`, function (event) {
     event.preventDefault();
@@ -86,12 +87,14 @@ $(document).ready(function () {
 
     const data = $(`.tweet-form textarea`).serialize(); //serialize data
 
-    $.ajax("/tweets", { method: "POST", data: data }).then(function (
+    $.ajax("/tweets", { method: "POST", data: data })
+        .then(function (tweetResult) {
+        let tweetTextArea = $('#tweet-text');
+        tweetTextArea.val("");
       //AJAX post request on tweet data
-      tweetResult
-    ) {
       console.log("Success: ", tweetResult);
-      $.ajax("/tweets", { method: "GET" }).then(function (tweetDisplay) {
+      $.ajax("/tweets", { method: "GET" })
+        .then(function (tweetDisplay) {
         //AJAX get request to get back tweet data and use renderTweets to display it on website
         renderTweets(tweetDisplay);
         console.log("Display:", tweetDisplay);
