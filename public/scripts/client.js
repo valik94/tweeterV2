@@ -91,6 +91,8 @@ $(document).ready(function () {
         .then(function (tweetResult) {
         let tweetTextArea = $('#tweet-text');
         tweetTextArea.val("");
+        let counter = $('#counter');
+        counter.text(140);
       //AJAX post request on tweet data
       console.log("Success: ", tweetResult);
       $.ajax("/tweets", { method: "GET" })
