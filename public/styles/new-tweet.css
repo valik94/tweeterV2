@@ -15,10 +15,10 @@
     border: none;
     outline: none;
     font-weight: bold;
-    border-bottom: 4px black solid;
     background-color: #f4f1ec;
     display: flex;
     width: 100%;
+    border-bottom: 3px solid black;
   }
 
 .tweet-header{
@@ -85,13 +85,6 @@ article:hover{
   opacity: 0.5;
 }
 
-.tweet-text{
-  border-bottom: 3px solid black;
-}
- d
-.tweet-header{
-  display: flex;
-}
 .error-message{
   color: red;
   margin-bottom: 15px;

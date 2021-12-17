@@ -5,33 +5,8 @@
  */
 
 $(document).ready(function () {
-  // Test / driver code (temporary). Eventually will get this from the server.
-  //   const data = [
-  //     {
-  //       user: {
-  //         name: "Newton",
-  //         avatars: "https://i.imgur.com/73hZDYK.png",
-  //         handle: "@SirIsaac",
-  //       },
-  //       content: {
-  //         text: "If I have seen further it is by standing on the shoulders of giants",
-  //       },
-  //       created_at: 1461116232227,
-  //     },
-  //     {
-  //       user: {
-  //         name: "Descartes",
-  //         avatars: "https://i.imgur.com/nlhLi3I.png",
-  //         handle: "@rd",
-  //       },
-  //       content: {
-  //         text: "Je pense , donc je suis",
-  //       },
-  //       created_at: 1461113959088,
-  //     },
-  //   ];
-
-  const escape = function (str) { //Escape security for XSS <script> input tags
+  const escape = function (str) {
+    //Escape security for XSS <script> input tags
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -40,7 +15,6 @@ $(document).ready(function () {
   //input: tweet object, output: tweet <article> with HTML structure
   const createTweetElement = function (tweetData) {
     const safeHTML = `<p>${escape(tweetData.content.text)}</p>`; //safeHTML Input tag to insert & protect against cross site scripting
-    //const HTML = tweetData.content.text; //tweet TEXT
     let $tweet = $(`<article class="tweet-article">
     <header>
     <div class="userdata">
@@ -84,39 +58,46 @@ $(document).ready(function () {
     event.preventDefault();
     let diff = 140 - document.getElementById("tweet-text").value.length;
     let tweetData = document.getElementById("tweet-text").value;
-    console.log('tweetData is', typeof tweetData, tweetData.length);
-    $('.error-message').hide().removeClass('error-class');
-    if (diff < 0) {//form validation for tweet chars exceeding 140
-        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> Too long, please respect limit of 140 chars. #kthxbye <i class="fas fa-exclamation-triangle"></i>`);//html error message styling to display
-        $('.error-message').slideDown().addClass('error-class');
+    console.log("tweetData is", typeof tweetData, tweetData.length);
+    $(".error-message").hide().removeClass("error-class");
+    if (diff < 0) {
+      //form validation for tweet chars exceeding 140
+      $(".error-message").html(
+        `<i class="fas fa-exclamation-triangle"></i> Too long, please respect limit of 140 chars. #kthxbye <i class="fas fa-exclamation-triangle"></i>`
+      ); //html error message styling to display
+      $(".error-message").slideDown().addClass("error-class");
       return;
     }
-    if (tweetData.length === 0 || tweetData === null) { //form validation for empty tweet
-        $('.error-message').html(`<i class="fas fa-exclamation-triangle"></i> The tweet, is empty, please write something. #kthxbye <i class="fas fa-exclamation-triangle"></i>`) //html error message styling to display
-        $('.error-message').slideDown().addClass('error-class');
+    if (tweetData.length === 0 || tweetData === null) {
+      //form validation for empty tweet
+      $(".error-message").html(
+        `<i class="fas fa-exclamation-triangle"></i> The tweet, is empty, please write something. #kthxbye <i class="fas fa-exclamation-triangle"></i>`
+      ); //html error message styling to display
+      $(".error-message").slideDown().addClass("error-class");
       return;
     }
-    console.log($('.error-message').hasClass('error-class'));
+    console.log($(".error-message").hasClass("error-class"));
 
-    if ($('.error-message').hasClass('error-class')){ //form to revert state if error-class class is still showing.
-        $('.error-message').slideUp().removeClass('error-class'); //slideup/hide and removeclass error-class
-        return;
+    if ($(".error-message").hasClass("error-class")) {
+      //form to revert state if error-class class is still showing.
+      $(".error-message").slideUp().removeClass("error-class"); //slideup/hide and removeclass error-class
+      return;
     }
-
 
     const data = $(`.tweet-form textarea`).serialize(); //serialize data
-    
-    $.ajax("/tweets", { method: "POST", data: data }).then(function ( //AJAX post request on tweet data
+
+    $.ajax("/tweets", { method: "POST", data: data }).then(function (
+      //AJAX post request on tweet data
       tweetResult
     ) {
       console.log("Success: ", tweetResult);
-      $.ajax("/tweets", { method: "GET" }).then(function (tweetDisplay) { //AJAX get request to get back tweet data and use renderTweets to display it on website
+      $.ajax("/tweets", { method: "GET" }).then(function (tweetDisplay) {
+        //AJAX get request to get back tweet data and use renderTweets to display it on website
         renderTweets(tweetDisplay);
         console.log("Display:", tweetDisplay);
       });
     });
   });
-
 
   //fetches tweets from /tweets
   const loadtweets = function () {
