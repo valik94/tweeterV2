@@ -28,11 +28,11 @@ body {
  */
 
  .container{
-  width:90%;
   display:flex;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  align-items: stretch;
+  margin-right: 5%;
+  margin-left: 5%;
   flex-direction: column;
 }
 

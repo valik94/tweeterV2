@@ -3,26 +3,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 90%; */
     height: 400px;
     background-color: #878c00;
     background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
-    margin-top: 120px;
     margin-right: 50px;
     padding-top: 50px;
-    /* margin-left: 50px; */
 
 }
 .avatar{
-    transform: translate(0%,-60%);
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 0.2em;
+    color: #f6f3ed;
+    text-shadow: white;
 }
 
-/* @media only screen and (min-width: 1024){
-    #page-header{
-        margin: 120px 50px;
-        width: 40%;
-    }
-} */
 
 @media (min-width: 1025px) {
     .mainBody > header {
@@ -40,14 +35,16 @@
 
   @media (max-width: 1024px) {
     #page-header {
-        background-color: #4056A1;
-        /* background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");; */
+        background-color: #878c00;
+        background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
+
       margin-top: 80px;
       width: 100%;
     }
-    nav {
+    .mainBody > nav {
       height: 90px;
-      /* background-color: #878c00; */
-    /* background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png"); */
+      background-color: #878c00;
+        background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
+
     }
   }
