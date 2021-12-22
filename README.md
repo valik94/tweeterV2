@@ -19,7 +19,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of Demo tweet"] (https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png?raw=true)
+!["Screenshot of Demo tweet"] (https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png?)
 !["Screenshot of Landing Page"] (https://github.com/valik94/tweeterV2/blob/master/docs/LandingPage.png?raw=true)
 !["Screenshot of Long (over 140chars) error message"] (https://github.com/valik94/tweeterV2/blob/master/docs/LongErrorMessage.png?raw=true)
 !["Screenshot of Mobile view design"] (https://github.com/valik94/tweeterV2/blob/master/docs/MobileView.png?raw=true)
