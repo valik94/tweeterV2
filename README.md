@@ -23,13 +23,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of Demo tweet"] (https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png)
+!["Screenshot of Demo tweet"](https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png)
 
-!["Screenshot of Landing Page"] (https://github.com/valik94/tweeterV2/blob/master/docs/LandingPage.png)
+!["Screenshot of Landing Page"](https://github.com/valik94/tweeterV2/blob/master/docs/LandingPage.png)
 
-!["Screenshot of Long (over 140chars) error message"] (https://github.com/valik94/tweeterV2/blob/master/docs/LongErrorMessage.png)
+!["Screenshot of Long (over 140chars) error message"](https://github.com/valik94/tweeterV2/blob/master/docs/LongErrorMessage.png)
 
-!["Screenshot of Mobile view design"] (https://github.com/valik94/tweeterV2/blob/master/docs/MobileView.png)
+!["Screenshot of Mobile view design"](https://github.com/valik94/tweeterV2/blob/master/docs/MobileView.png)
 
-!["Screenshot of Short (0 chars) error message"] (https://github.com/valik94/tweeterV2/blob/master/docs/ShortErrorMessage.png?raw=true)
+!["Screenshot of Short (0 chars) error message"](https://github.com/valik94/tweeterV2/blob/master/docs/ShortErrorMessage.png?raw=true)
 
