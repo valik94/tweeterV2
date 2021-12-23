@@ -23,7 +23,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## GIF Video Demo 
 
-!["Video DEMO of tweeter app"](https://github.com/valik94/tweeterV2/blob/master/docs/TweeterDemoVideo.gif)
+!["Video DEMO of tweeter app"](https://github.com/valik94/tweeterV2/blob/master/docs/TweeterDemo.gif)
 
 ## Screenshots
 
