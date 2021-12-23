@@ -43,17 +43,14 @@ $(document).ready(function () {
 
   //input: array of tweet objects (<article>); output: appending objects to #tweets-container
   const renderTweets = function (tweets) {
-    let result = "";
-    // $('tweet-record').empty();
+    $('tweet-record').empty();
     for (let $tweet of tweets) {
       // loops through tweets
       let $returnedValue = createTweetElement($tweet); // calls createTweetElement for each tweet
-      result = $(`#tweet-record`).prepend($returnedValue); // takes return value and appends it to the tweets container
-      $('textarea').on('submit', function(event){
-
-      })
+      $(`#tweet-record`).prepend($returnedValue); // takes return value and PREPENDS it to the tweets container (on top)
     }
   };
+  
 //targeting tweet form to on submit event to perform the form validation
   $(".tweet-form").on(`submit`, function (event) {
     event.preventDefault();

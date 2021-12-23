@@ -53,58 +53,65 @@
     />
 
     <!-- time ago External JS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <body>
     <div class="mainBody">
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span id="title">tweeter</span>
-      <div class="icontext">
-        <p><strong>Write</strong> a new tweet!</p>
-        <i class="fas fa-angle-double-down"></i>
-      </div>
-    </nav>
+      <!-- Top nav bar (fixed) -->
+      <nav>
+        <span id="title">tweeter</span>
+        <div class="icontext">
+          <p><strong>Write</strong> a new tweet!</p>
+          <i class="fas fa-angle-double-down"></i>
+        </div>
+      </nav>
 
-    <!-- Header -->
-    <header id="page-header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <div>
-        <h2 class="avatar">Valentin Lyashenko</h2>
-      </div>
-    </header>
+      <!-- Header -->
+      <header id="page-header">
+        <div>
+          <img src="/images/profile-hex.png" />
+        </div>
+        <div>
+          <h2 class="avatar">Valentin Lyashenko</h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="tweet-form">
-          <label for="tweet-text"></label>
-          <div class='error-message'></div> 
-          <!-- tweet textarea -->
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div>
-            <button type="submit" id= "submit-tweet" class="button-style">Tweet</button>
-            <output id="counter" name="counter" class="counter" for="tweet-text"
-              >140</output
-            >
-          </div>
-        </form>
-      </section>
-      <!-- New section where <article> HTML is created from client.js to make a tweet record -->
-      <section class="tweet-record" id="tweet-record">
-      </section>
-    </main>
-  </div>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form class="tweet-form">
+            <label for="tweet-text"></label>
+            <div class="error-message"></div>
+            <!-- tweet textarea -->
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div>
+              <button type="submit" id="submit-tweet" class="button-style">
+                Tweet
+              </button>
+              <output
+                id="counter"
+                name="counter"
+                class="counter"
+                for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <!-- New section where <article> HTML is created from client.js to make a tweet record -->
+        <section class="tweet-record" id="tweet-record"></section>
+      </main>
+    </div>
   </body>
 </html>

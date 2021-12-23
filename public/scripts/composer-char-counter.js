@@ -1,6 +1,4 @@
 $(document).ready(function characterCount() {
-  // $('textarea').on('keyup', function(){
-  //})
   const input = document.getElementById("tweet-text");
   input.addEventListener("input", function () {
     let counterUpdate = document.getElementById("counter");
