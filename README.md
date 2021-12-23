@@ -21,6 +21,10 @@ This repository is the starter code for the project: Students will fork and clon
 - timeago.js 4.0.2
 - Node 5.10.x or above
 
+## GIF Video Demo 
+
+!["Video DEMO of tweeter app"](https://github.com/valik94/tweeterV2/blob/master/docs/TweeterDemo.gif)
+
 ## Screenshots
 
 !["Screenshot of Demo tweet"](https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png)
