@@ -14,14 +14,22 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+- Body-parser 1.15.2 or above
+- Chance 1.02 or above
+- Express 4.13.4 or above
+- md5 2.1.0 or above
+- timeago.js 4.0.2
 - Node 5.10.x or above
 
 ## Screenshots
 
-!["Screenshot of Demo tweet"] (https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png?raw=true)
-!["Screenshot of Landing Page"] (https://github.com/valik94/tweeterV2/blob/master/docs/LandingPage.png?raw=true)
-!["Screenshot of Long (over 140chars) error message"] (https://github.com/valik94/tweeterV2/blob/master/docs/LongErrorMessage.png?raw=true)
-!["Screenshot of Mobile view design"] (https://github.com/valik94/tweeterV2/blob/master/docs/MobileView.png?raw=true)
-!["Screenshot of Short (0 chars) error message"] (https://github.com/valik94/tweeterV2/blob/master/docs/ShortErrorMessage.png?raw=true)
+!["Screenshot of Demo tweet"](https://github.com/valik94/tweeterV2/blob/master/docs/DemoTweet.png)
+
+!["Screenshot of Landing Page"](https://github.com/valik94/tweeterV2/blob/master/docs/LandingPage.png)
+
+!["Screenshot of Long (over 140chars) error message"](https://github.com/valik94/tweeterV2/blob/master/docs/LongErrorMessage.png)
+
+!["Screenshot of Mobile view design"](https://github.com/valik94/tweeterV2/blob/master/docs/MobileView.png)
+
+!["Screenshot of Short (0 chars) error message"](https://github.com/valik94/tweeterV2/blob/master/docs/ShortErrorMessage.png?raw=true)
 
