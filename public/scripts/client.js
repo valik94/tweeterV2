@@ -12,6 +12,17 @@ $(document).ready(function () {
     return div.innerHTML;
   };
 
+   //fetches tweets from /tweets using get request
+   const loadtweets = function () {
+    $.ajax("/tweets", { method: "GET" })
+      .then(function (tweetDisplay) { 
+      renderTweets(tweetDisplay);
+      console.log("Display:", tweetDisplay);
+    });
+  };
+  loadtweets()
+
+
   //input: tweet object, output: tweet <article> with HTML structure
   const createTweetElement = function (tweetData) {
     const safeHTML = `<p>${escape(tweetData.content.text)}</p>`; //safeHTML Input tag to insert & protect against cross site scripting
@@ -43,7 +54,7 @@ $(document).ready(function () {
 
   //input: array of tweet objects (<article>); output: appending objects to #tweets-container
   const renderTweets = function (tweets) {
-    $('tweet-record').empty();
+    $('#tweet-record').empty();
     for (let $tweet of tweets) {
       // loops through tweets
       let $returnedValue = createTweetElement($tweet); // calls createTweetElement for each tweet
@@ -82,33 +93,28 @@ $(document).ready(function () {
       return;
     }
 
+
+
     const data = $(`.tweet-form textarea`).serialize(); //serialize data
 //POST request  post data to /tweets and then get data, render and display it
-    $.ajax("/tweets", { method: "POST", data: data })
-        .then(function (tweetResult) {
-        let tweetTextArea = $('#tweet-text');
-        tweetTextArea.val("");
-        let counter = $('#counter');
-        counter.text(140);
-      //AJAX post request on tweet data
-      console.log("Success: ", tweetResult);
-      $.ajax("/tweets", { method: "GET" })
-        .then(function (tweetDisplay) {
-        //AJAX get request to get back tweet data and use renderTweets to display it on website
-        renderTweets(tweetDisplay);
-        console.log("Display:", tweetDisplay);
-      });
-    });
+    $.ajax("/tweets", { 
+      method: "POST", 
+      data: data,
+      success: (data) =>{
+        console.log(data);
+        loadtweets();
+      },
+      error: (err) =>{
+        console.log(err);
+      }
+     })
+     //clear tweet textbox 
+     let tweetTextArea = $('#tweet-text');
+     tweetTextArea.val("");
+     //reset character counter to 140
+     let counter = $('#counter');
+     counter.text(140);
+       
   });
 
-  //fetches tweets from /tweets using get request
-  const loadtweets = function () {
-    $.ajax("/tweets", { method: "GET" })
-      .then(function (tweetDisplay) { 
-      renderTweets(tweetDisplay);
-      console.log("Display:", tweetDisplay);
-    });
-  };
-
-  loadtweets();
-});
+ });

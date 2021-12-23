@@ -16,6 +16,7 @@
     outline: none;
     font-weight: bold;
     background-color: #f4f1ec;
+    /* overflow-wrap: break-word; */
     display: flex;
     width: 100%;
     border-bottom: 3px solid black;
@@ -40,6 +41,12 @@ article{
   padding: 10px;
   margin-bottom: 20px;
 }
+
+.tweet-text > p{
+  overflow-wrap: break-word;
+}
+
+
 
 .tweet-message{
   margin-bottom: 15px;
